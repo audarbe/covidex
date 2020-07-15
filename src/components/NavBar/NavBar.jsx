@@ -2,17 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
-    let nav = props.user ?
+    let userControlPanel = props.user ?
         <div>
-            <Link exact to='/'>US</Link> |
-            <Link exact to='/state'>State</Link> |
+            <Link to='/facilities'>MY FACILITIES</Link> | 
             <Link
                 to=''
                 onClick={props.handleLogout}
             >
-                LOG OUT
+                 LOG OUT
             </Link> |
         WELCOME, {props.user.name}
+
         </div>
         :
         <div>
@@ -31,7 +31,9 @@ const NavBar = (props) => {
 
     return (
         <nav className='NavBar'>
-            {nav}
+        <Link exact to='/'>US</Link> |
+        <Link exact to='/state'>State</Link>
+        {userControlPanel}
         </nav>
     );
 };
