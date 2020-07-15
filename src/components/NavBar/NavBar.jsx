@@ -31,8 +31,8 @@ const NavBar = (props) => {
 
     return (
         <nav className='NavBar'>
-        <Link exact to='/'>US</Link> |
-        <Link exact to='/state'>State</Link>
+        <Link to='/'>US</Link> |
+        <Link to='/state'>State</Link>
         {userControlPanel}
         </nav>
     );
