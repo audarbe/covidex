@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import UsStats from '../../components/UsStats/UsStats';
-import StateStats from '../../components/StateStats/StateStats';
 import SignupPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import userService from '../../utils/userService';
@@ -11,6 +9,7 @@ import * as facilityAPI from '../../services/facilities-api';
 import FacilityListPage from '../FacilitiesListPage/FacilitiesListPage';
 import AddFacilityPage from '../AddFacilityPage/AddFacilityPage';
 import EditFacilityPage from '../EditFacilityPage/EditFacilityPage';
+import StatsPage from '../StatsPage/StatsPage';
 
 class App extends Component {
     constructor() {
@@ -73,18 +72,16 @@ class App extends Component {
         return (
             <div>
                 <header>
-                    COVIDEX
                     <NavBar
                         user={this.state.user}
                         handleLogout={this.handleLogout}
                     />
                 </header>
                 <main>
-                    <Route exact path='/' render={() =>
-                        <UsStats />
-                    }/>
-                    <Route path='/state' render={() =>
-                        <StateStats />
+                    <Route exact path='/' render={({ history }) =>
+                        <StatsPage 
+                            history={history}
+                        />
                     }/>
                     <Route path='/signup' render={({ history }) =>
                         <SignupPage

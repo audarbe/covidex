@@ -31,8 +31,7 @@ const NavBar = (props) => {
 
     return (
         <nav className='NavBar'>
-        <Link to='/'>US</Link> |
-        <Link to='/state'>State</Link>
+        <Link to='/'>COVIDEX</Link>
         {userControlPanel}
         </nav>
     );
