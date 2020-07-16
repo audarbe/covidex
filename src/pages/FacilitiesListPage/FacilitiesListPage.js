@@ -12,10 +12,10 @@ function FacilityListPage(props) {
                     .map(facility => {
                     return (
                         <div key={facility._id}>
-                        <p>
-                            {facility.name} | 
-                            {facility.userId} facility| 
-                            {props.user._id} user | 
+                        
+                            <h3>Name: {facility.name}</h3>
+                            <p>State: {facility.state}</p>
+                            <p>User ID: {props.user._id}</p>
                             <Link to={{
                                     pathname: 'facilities/edit',
                                     state: {facility},
@@ -23,7 +23,7 @@ function FacilityListPage(props) {
                                     EDIT
                             </Link> |
                             <button onClick={() => props.handleDeleteFacility(facility._id)}>Delete</button>
-                        </p>
+                            <p>-------</p>
                         </div>
                     )
                 }

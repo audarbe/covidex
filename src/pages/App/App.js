@@ -19,6 +19,13 @@ class App extends Component {
             user: userService.getUser(),
             facilities: [],
         }
+        this.statesEnum = [
+            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+            'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+            'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+            'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+            'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
+        ]
     };
 
     async componentDidMount() {
@@ -102,12 +109,14 @@ class App extends Component {
                         <AddFacilityPage
                             user={this.state.user}
                             handleAddFacility={this.handleAddFacility}
+                            statesEnum={this.statesEnum}
                         />
                     }/>
                     <Route exact path='/facilities/edit' render={({location}) =>
                         <EditFacilityPage
                             location={location}
                             handleEditFacility={this.handleEditFacility}
+                            statesEnum={this.statesEnum}
                         />
                     }/>
                 </main>

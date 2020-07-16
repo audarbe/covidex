@@ -39,7 +39,7 @@ class EditFacilityPage extends Component {
                         <label>Description</label>
                         <input
                             name="description"
-                            value={this.state.formData.breed}
+                            value={this.state.formData.description}
                             onChange={this.handleChange}
                             required
                         />
@@ -48,7 +48,7 @@ class EditFacilityPage extends Component {
                         <label>Street Address</label>
                         <input
                             name="streetAddress"
-                            value={this.state.formData.age}
+                            value={this.state.formData.streetAddress}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -56,7 +56,7 @@ class EditFacilityPage extends Component {
                         <label>Suite Number</label>
                         <input
                             name="suiteNum"
-                            value={this.state.formData.age}
+                            value={this.state.formData.suiteNum}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -64,15 +64,28 @@ class EditFacilityPage extends Component {
                         <label>City</label>
                         <input
                             name="city"
-                            value={this.state.formData.age}
+                            value={this.state.formData.city}
                             onChange={this.handleChange}
                         />
+                    </div>
+                    <div>
+                        <label>State</label>
+                        <select
+                            name="state"
+                            value={this.state.formData.state}
+                            onChange={this.handleChange}
+                        >
+                            { this.props.statesEnum.map(s => (
+                                <option key={s} value={s}>{s}</option>
+                            ))
+                            }
+                        </select>
                     </div>
                     <div>
                         <label>Zip Code</label>
                         <input
                             name="zipCode"
-                            value={this.state.formData.age}
+                            value={this.state.formData.zipCode}
                             onChange={this.handleChange}
                         />
                     </div>

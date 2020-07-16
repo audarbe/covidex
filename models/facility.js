@@ -32,13 +32,6 @@ const facilitySchema = new Schema({
             'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
         ],
     },
-    languages: {
-        type: String,
-        required: true,
-        enum: [
-            'EN', 'ES', 'ZH', 'FR', 'TL', 'VI', 'KO', 'DE', 'AR', 'RU',
-        ]
-    },
     zipCode: {
         type: Number,
         required: true,
@@ -53,5 +46,12 @@ const facilitySchema = new Schema({
         timestamps: true
     }
 );
+
+// 2-letters/upppercase
+// scoreSchema.pre('save', function(next) {
+//     this.state = this.state.substr(0, 2).toUpperCase();
+//     next();
+//   });
+
 
 module.exports = mongoose.model('Facility', facilitySchema);
