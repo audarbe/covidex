@@ -21,6 +21,13 @@ class App extends Component {
         }
     };
 
+    async componentDidMount() {
+        const facilities = await facilityAPI.getAll();
+        this.setState(state => ({
+            facilities: facilities
+        }))
+    };
+
     handleAddFacility = async newFacilityData => {
         const newFacility = await facilityAPI.create(newFacilityData);
         this.setState(state => ({
@@ -93,6 +100,7 @@ class App extends Component {
                     }/>
                     <Route exact path='/facilities/add' render={() =>
                         <AddFacilityPage
+                            user={this.state.user}
                             handleAddFacility={this.handleAddFacility}
                         />
                     }/>

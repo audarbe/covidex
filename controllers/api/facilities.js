@@ -8,7 +8,6 @@ module.exports = {
 }
 
 async function create(req, res) {
-    console.log(req.body)
     try {
         const facility = await Facility.create(req.body);
         res.status(201).json(facility);
@@ -18,10 +17,10 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    console.log(req.body)
+    console.log(req.user)
     try {
-        const facility = await Facility.find({});
-        res.status(200).json(facility);
+        const facilities = await Facility.find({});
+        res.status(200).json(facilities);
     } catch (err) {
         res.json({ err });
     }

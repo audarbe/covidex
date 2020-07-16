@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class AddFacilityPage extends Component {
     state = {
         invalidForm: true,
@@ -12,6 +13,7 @@ class AddFacilityPage extends Component {
             state: 'CA',
             languages: 'EN',
             zipCode: '',
+            userId: this.props.user._id,
         }
     };
 
@@ -33,6 +35,7 @@ class AddFacilityPage extends Component {
     render() {
         return (
             <>
+            
                 <h1>Add Facility</h1>
                 <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
                     <div>
@@ -76,6 +79,15 @@ class AddFacilityPage extends Component {
                             value={this.state.formData.age}
                             onChange={this.handleChange}
                         />
+                    </div>
+                    <div>
+                        <label>State</label>
+                        <select
+                            name="state"
+                            value={this.state.formData.age}
+                            onChange={this.handleChange}
+                        >
+                        </select>
                     </div>
                     <div>
                         <label>Zip Code</label>

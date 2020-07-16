@@ -44,6 +44,10 @@ const facilitySchema = new Schema({
         required: true,
         min: 0,
     },
+    userId: {
+        type: String,
+        required: true,
+    }
 },
     {
         timestamps: true
