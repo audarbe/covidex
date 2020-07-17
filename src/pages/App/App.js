@@ -6,6 +6,7 @@ import LogInPage from '../LogInPage/LogInPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import * as facilityAPI from '../../services/facilities-api';
+import * as statisticsAPI from '../../services/stats-api'
 import FacilityListPage from '../FacilitiesListPage/FacilitiesListPage';
 import AddFacilityPage from '../AddFacilityPage/AddFacilityPage';
 import EditFacilityPage from '../EditFacilityPage/EditFacilityPage';
@@ -17,7 +18,8 @@ class App extends Component {
         this.state = {
             user: userService.getUser(),
             facilities: [],
-            currentChoice: 'US'
+            currentChoice: 'US',
+            statistics: [],
         }
 
         this.statesEnum = [
@@ -34,6 +36,7 @@ class App extends Component {
         this.setState(state => ({
             facilities: facilities
         }))
+        this.handleUpdateStats();
     };
 
     handleAddFacility = async newFacilityData => {
@@ -72,9 +75,19 @@ class App extends Component {
 
     handleMapClick = (stateClicked) => {
         this.setState(
-            {currentChoice: stateClicked}
+            {currentChoice: stateClicked},
+            () => this.handleUpdateStats()
         );
     };
+
+    handleUpdateStats = async newStatisticsData => {
+        let newStatistics = await statisticsAPI.getStatistics(this.state.currentChoice);
+        if (this.state.currentChoice === 'US') newStatistics = newStatistics[0];
+        this.setState(
+            {statistics: newStatistics},
+            () => this.props.history.push('/')
+        );
+    }
 
     render() {
         return (
@@ -92,6 +105,7 @@ class App extends Component {
                             handleMapClick={this.handleMapClick}
                             currentChoice={this.state.currentChoice}
                             facilities={this.state.facilities}
+                            statistics={this.state.statistics}
                         />
                     }/>
                     <Route path='/signup' render={({ history }) =>
