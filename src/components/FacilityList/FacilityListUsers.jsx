@@ -1,8 +1,8 @@
 import React from 'react';
-import './FacilityListItem.css';
+import './FacilityList.css';
 import { Link } from 'react-router-dom';
 
-function FacilityListItem(props) {
+function FacilityListUsers(props) {
     return (
         <>
             { props.facilities.length > 0 ?
@@ -41,4 +41,4 @@ function FacilityListItem(props) {
 }
 
 
-export default FacilityListItem;
+export default FacilityListUsers;

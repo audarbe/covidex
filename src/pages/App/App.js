@@ -17,7 +17,9 @@ class App extends Component {
         this.state = {
             user: userService.getUser(),
             facilities: [],
+            currentChoice: 'US'
         }
+
         this.statesEnum = [
             'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
             'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
@@ -68,6 +70,12 @@ class App extends Component {
         this.setState({ user: userService.getUser() });
     }
 
+    handleMapClick = (stateClicked) => {
+        this.setState(
+            {currentChoice: stateClicked}
+        );
+    };
+
     render() {
         return (
             <div>
@@ -81,6 +89,9 @@ class App extends Component {
                     <Route exact path='/' render={({ history }) =>
                         <StatsPage 
                             history={history}
+                            handleMapClick={this.handleMapClick}
+                            currentChoice={this.state.currentChoice}
+                            facilities={this.state.facilities}
                         />
                     }/>
                     <Route path='/signup' render={({ history }) =>

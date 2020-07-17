@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FacilityListItem from '../../components/FacilityListItem/FacilityListItem'
+import FacilityListUsers from '../../components/FacilityList/FacilityListUsers'
 
 function FacilityListPage(props) {
     return (
         <>
             <h1>MY FACILITIES</h1>
-            <FacilityListItem
+            <FacilityListUsers
                 user={props.user}
                 facilities={props.facilities}
                 handleDeleteFacility={props.handleDeleteFacility}
