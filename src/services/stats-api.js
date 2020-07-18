@@ -9,3 +9,9 @@ export function getStatistics(currentChoice) {
         );
     }
 }
+
+export function getStateStatistics() {
+        return (
+            fetch(`https://covidtracking.com/api/v1/states/current.json`, {mode: 'cors'}).then(res => res.json())
+        );
+}

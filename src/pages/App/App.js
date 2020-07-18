@@ -20,6 +20,7 @@ class App extends Component {
             facilities: [],
             currentChoice: 'US',
             statistics: [],
+            stateStatistics: [],
         }
 
         this.statesEnum = [
@@ -37,6 +38,7 @@ class App extends Component {
             facilities: facilities
         }))
         this.handleUpdateStats();
+        this.handleUpdateStateStats();
     };
 
     handleAddFacility = async newFacilityData => {
@@ -80,13 +82,18 @@ class App extends Component {
         );
     };
 
-    handleUpdateStats = async newStatisticsData => {
+    handleUpdateStats = async () => {
         let newStatistics = await statisticsAPI.getStatistics(this.state.currentChoice);
         if (this.state.currentChoice === 'US') newStatistics = newStatistics[0];
         this.setState(
-            {statistics: newStatistics},
+            {statistics: newStatistics,},            
             () => this.props.history.push('/')
-        );
+            );
+    }
+
+    handleUpdateStateStats = async () => {
+        let newStateStatistics = await statisticsAPI.getStateStatistics();
+        this.setState({stateStatistics: newStateStatistics});
     }
 
     render() {
@@ -106,6 +113,7 @@ class App extends Component {
                             currentChoice={this.state.currentChoice}
                             facilities={this.state.facilities}
                             statistics={this.state.statistics}
+                            stateStatistics={this.state.stateStatistics}
                         />
                     }/>
                     <Route path='/signup' render={({ history }) =>
