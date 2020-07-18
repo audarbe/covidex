@@ -1,5 +1,6 @@
 import React from 'react'
 import NumberFormat from 'react-number-format';
+import { getStateName } from '../../utils/utilities';
 
 function StateStatistics(props) {
     let items = 'loading...'
@@ -9,7 +10,7 @@ function StateStatistics(props) {
             .map((s, idx) =>
                 <tr key={s.state} onClick={() => props.handleMapClick(s.state)}>
                     <td>{idx + 1}</td>
-                    <td>{s.state}</td>
+                    <td>{getStateName(s.state)}</td>
                     <td>
                         <NumberFormat 
                             value={s[props.currentSort]}

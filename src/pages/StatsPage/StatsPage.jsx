@@ -9,8 +9,6 @@ class StatsPage extends Component {
     render() {
         return (
             <>
-                <h1>{this.props.currentChoice} STATISTICS</h1>
-                <button onClick={() => this.props.handleMapClick('US')}>View US Stats</button>
                 <Map 
                     handleMapClick={this.props.handleMapClick}
                     stateStatistics={this.props.stateStatistics}
@@ -22,6 +20,8 @@ class StatsPage extends Component {
                     statistics={this.props.statistics}
                     currentMapFilter={this.props.currentMapFilter}
                     handleMapFilter={this.props.handleMapFilter}
+                    currentChoice={this.props.currentChoice}
+                    handleMapClick={this.props.handleMapClick}
                 />
                 <div className="row">
                     <div className="left-8">

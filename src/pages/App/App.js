@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import SignupPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import userService from '../../utils/userService';
-import NavBar from '../../components/NavBar/NavBar';
+import WebsiteHeader from '../../components/WebsiteHeader/WebsiteHeader';
 import * as facilityAPI from '../../services/facilities-api';
 import * as statisticsAPI from '../../services/stats-api'
 import FacilityListPage from '../FacilitiesListPage/FacilitiesListPage';
@@ -113,11 +113,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 <header>
-                    <NavBar
+                    <WebsiteHeader
                         user={this.state.user}
                         handleLogout={this.handleLogout}
+                        handleMapClick={this.handleMapClick}
                     />
                 </header>
                 <main>
@@ -169,7 +170,7 @@ class App extends Component {
                         />
                     } />
                 </main>
-            </div>
+            </>
         )
     }
 }
