@@ -21,6 +21,8 @@ class App extends Component {
             currentChoice: 'US',
             statistics: [],
             stateStatistics: [],
+            stateTableData: [],
+            currentSort: 'positiveIncrease'
         }
 
         this.statesEnum = [
@@ -34,11 +36,13 @@ class App extends Component {
 
     async componentDidMount() {
         const facilities = await facilityAPI.getAll();
+        let newStateStatistics = await statisticsAPI.getStateStatistics();
         this.setState(state => ({
-            facilities: facilities
+            facilities: facilities,
+            stateStatistics: newStateStatistics
         }))
         this.handleUpdateStats();
-        this.handleUpdateStateStats();
+        this.filterStateData(this.state.currentSort);
     };
 
     handleAddFacility = async newFacilityData => {
@@ -51,17 +55,17 @@ class App extends Component {
     handleDeleteFacility = async id => {
         await facilityAPI.deleteOne(id);
         this.setState(state => ({
-          facilities: state.facilities.filter(f => f._id !== id)
-        }),() => this.props.history.push('/facilities'));
-      }
+            facilities: state.facilities.filter(f => f._id !== id)
+        }), () => this.props.history.push('/facilities'));
+    }
 
     handleEditFacility = async updatedFacilityData => {
         const updatedFacility = await facilityAPI.update(updatedFacilityData);
-        const newFacilitiesArray = this.state.facilities.map(f => 
+        const newFacilitiesArray = this.state.facilities.map(f =>
             f._id === updatedFacility._id ? updatedFacility : f
         );
         this.setState(
-            {facilities: newFacilitiesArray},
+            { facilities: newFacilitiesArray },
             () => this.props.history.push('/facilities')
         );
     }
@@ -77,7 +81,7 @@ class App extends Component {
 
     handleMapClick = (stateClicked) => {
         this.setState(
-            {currentChoice: stateClicked},
+            { currentChoice: stateClicked },
             () => this.handleUpdateStats()
         );
     };
@@ -86,14 +90,17 @@ class App extends Component {
         let newStatistics = await statisticsAPI.getStatistics(this.state.currentChoice);
         if (this.state.currentChoice === 'US') newStatistics = newStatistics[0];
         this.setState(
-            {statistics: newStatistics,},            
+            { statistics: newStatistics, },
             () => this.props.history.push('/')
-            );
+        );
     }
 
-    handleUpdateStateStats = async () => {
-        let newStateStatistics = await statisticsAPI.getStateStatistics();
-        this.setState({stateStatistics: newStateStatistics});
+    filterStateData = async (order) => {
+        let filteredStateData = this.state.stateStatistics;
+        this.state.stateStatistics.sort((a, b) => {
+            return b[order] - a[order];
+        });
+        this.setState({ stateTableData: filteredStateData });
     }
 
     render() {
@@ -107,7 +114,7 @@ class App extends Component {
                 </header>
                 <main>
                     <Route exact path='/' render={({ history }) =>
-                        <StatsPage 
+                        <StatsPage
                             history={history}
                             handleMapClick={this.handleMapClick}
                             currentChoice={this.state.currentChoice}
@@ -115,40 +122,40 @@ class App extends Component {
                             statistics={this.state.statistics}
                             stateStatistics={this.state.stateStatistics}
                         />
-                    }/>
+                    } />
                     <Route path='/signup' render={({ history }) =>
                         <SignupPage
                             history={history}
                             handleSignupOrLogin={this.handleSignupOrLogin}
                         />
-                    }/>
+                    } />
                     <Route exact path='/login' render={({ history }) =>
                         <LogInPage
                             handleSignupOrLogin={this.handleSignupOrLogin}
                             history={history}
                         />
-                    }/>
+                    } />
                     <Route exact path='/facilities' render={() =>
                         <FacilityListPage
                             user={this.state.user}
                             facilities={this.state.facilities}
                             handleDeleteFacility={this.handleDeleteFacility}
                         />
-                    }/>
+                    } />
                     <Route exact path='/facilities/add' render={() =>
                         <AddFacilityPage
                             user={this.state.user}
                             handleAddFacility={this.handleAddFacility}
                             statesEnum={this.statesEnum}
                         />
-                    }/>
-                    <Route exact path='/facilities/edit' render={({location}) =>
+                    } />
+                    <Route exact path='/facilities/edit' render={({ location }) =>
                         <EditFacilityPage
                             location={location}
                             handleEditFacility={this.handleEditFacility}
                             statesEnum={this.statesEnum}
                         />
-                    }/>
+                    } />
                 </main>
             </div>
         )

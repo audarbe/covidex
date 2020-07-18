@@ -2,10 +2,6 @@ import React from 'react'
 
 function StateStatistics(props) {
     let items = 'loading...'
-    let sorted = function(order) {
-        props.stateStatistics.sort((a, b) => {
-            return b[order] - a[order];
-        });
     items =
         props.stateStatistics
             .slice(0, 20)
@@ -16,9 +12,6 @@ function StateStatistics(props) {
                     <td>{s.positiveIncrease}</td>
                 </tr>
             )
-    }
-    sorted('positiveIncrease')
-
     return (
         <>
             <p>State Statistics here</p>
