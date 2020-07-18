@@ -14,9 +14,13 @@ class StatsPage extends Component {
                 <Map 
                     handleMapClick={this.props.handleMapClick}
                     stateStatistics={this.props.stateStatistics}
+                    currentMapFilter={this.props.currentMapFilter}
+                    handleMapFilter={this.props.handleMapFilter}
                 />
                 <StatsPageMainStats 
                     statistics={this.props.statistics}
+                    currentMapFilter={this.props.currentMapFilter}
+                    handleMapFilter={this.props.handleMapFilter}
                 />
                 <div className="row">
                     <div className="left-8">

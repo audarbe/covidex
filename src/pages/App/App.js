@@ -22,7 +22,8 @@ class App extends Component {
             statistics: [],
             stateStatistics: [],
             stateTableData: [],
-            currentSort: 'positiveIncrease'
+            currentSort: 'positiveIncrease',
+            currentMapFilter: 'positiveIncrease',
         }
 
         this.statesEnum = [
@@ -104,6 +105,12 @@ class App extends Component {
         );
     }
 
+    handleMapFilter = async (mapFilter) => {
+        this.setState(
+            { currentMapFilter: mapFilter }
+        );
+    }
+
     render() {
         return (
             <div>
@@ -124,6 +131,8 @@ class App extends Component {
                             stateStatistics={this.state.stateStatistics}
                             currentSort={this.state.currentSort}
                             filterStateData={this.filterStateData}
+                            currentMapFilter={this.state.currentMapFilter}
+                            handleMapFilter={this.handleMapFilter}
                         />
                     } />
                     <Route path='/signup' render={({ history }) =>
