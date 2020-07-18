@@ -4,32 +4,19 @@ import './Map.css'
 
 class Map extends Component {
     statesCustomConfig = () => {
-        let stateFill = this.props.stateStatistics.reduce((acc, s) => {
-            let fillColor = { fill: this.getFillColor(s[this.props.currentMapFilter]) }
-            return { ...acc, [s.state]: fillColor }
-        }, {})
-        return stateFill;
+        if (this.props.currentChoice === 'US') {
+            let stateFill = this.props.stateStatistics.reduce((acc, s) => {
+                let fillColor = { fill: this.getFillColor(s[this.props.currentMapFilter]) }
+                return { ...acc, [s.state]: fillColor }
+            }, {})
+            return stateFill;
+        } else {
+            return { [this.props.currentChoice]: { fill: '#3498DB' } }
+        }
     };
 
     getFillColor = (val) => {
-        if (this.props.currentMapFilter === 'positiveIncrease') {
-            switch (true) {
-                case val > 10000:
-                    return '#C0392B';
-                case val > 7500:
-                    return '#E74C3C';
-                case val > 5000:
-                    return '#DC7633';
-                case val > 2500:
-                    return '#E67E22';
-                case val > 1000:
-                    return '#F5B041';
-                case val > 500:
-                    return '#F7DC6F';
-                default:
-                    return '#D0D3D4';
-            }
-        } else if (this.props.currentMapFilter === 'positive') {
+        if (this.props.currentMapFilter === 'positive') {
             switch (true) {
                 case val > 400000:
                     return '#C0392B';

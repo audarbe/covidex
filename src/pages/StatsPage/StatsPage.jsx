@@ -16,6 +16,7 @@ class StatsPage extends Component {
                     stateStatistics={this.props.stateStatistics}
                     currentMapFilter={this.props.currentMapFilter}
                     handleMapFilter={this.props.handleMapFilter}
+                    currentChoice={this.props.currentChoice}
                 />
                 <StatsPageMainStats 
                     statistics={this.props.statistics}
