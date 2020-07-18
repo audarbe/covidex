@@ -1,4 +1,5 @@
 import React from 'react'
+import NumberFormat from 'react-number-format';
 
 function StateStatistics(props) {
     let items = 'loading...'
@@ -9,7 +10,13 @@ function StateStatistics(props) {
                 <tr key={s.state} onClick={() => props.handleMapClick(s.state)}>
                     <td>{idx + 1}</td>
                     <td>{s.state}</td>
-                    <td>{s[props.currentSort]}</td>
+                    <td>
+                        <NumberFormat 
+                            value={s[props.currentSort]}
+                            thousandSeparator={true} 
+                            displayType={'text'}
+                        />
+                    </td>
                 </tr>
             )
     return (

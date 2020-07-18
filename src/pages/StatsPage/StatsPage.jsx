@@ -13,20 +13,27 @@ class StatsPage extends Component {
                 <button onClick={() => this.props.handleMapClick('US')}>View US Stats</button>
                 <Map 
                     handleMapClick={this.props.handleMapClick}
+                    stateStatistics={this.props.stateStatistics}
                 />
                 <StatsPageMainStats 
                     statistics={this.props.statistics}
                 />
-                <FacilityListVisitors 
-                    facilities={this.props.facilities}
-                    currentChoice={this.props.currentChoice}
-                />
-                <StateStatistics 
-                    stateStatistics={this.props.stateStatistics}
-                    currentSort={this.props.currentSort}
-                    filterStateData={this.props.filterStateData}
-                    handleMapClick={this.props.handleMapClick}
-                />
+                <div className="row">
+                    <div className="left-8">
+                        <FacilityListVisitors 
+                            facilities={this.props.facilities}
+                            currentChoice={this.props.currentChoice}
+                        />
+                    </div>
+                    <div className="right-4">
+                        <StateStatistics 
+                            stateStatistics={this.props.stateStatistics}
+                            currentSort={this.props.currentSort}
+                            filterStateData={this.props.filterStateData}
+                            handleMapClick={this.props.handleMapClick}
+                        />
+                    </div>
+                </div>
             </>
         );
     }
