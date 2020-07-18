@@ -96,11 +96,12 @@ class App extends Component {
     }
 
     filterStateData = async (order) => {
-        let filteredStateData = this.state.stateStatistics;
         this.state.stateStatistics.sort((a, b) => {
             return b[order] - a[order];
         });
-        this.setState({ stateTableData: filteredStateData });
+        this.setState(
+            { currentSort: order }
+        );
     }
 
     render() {
@@ -121,6 +122,8 @@ class App extends Component {
                             facilities={this.state.facilities}
                             statistics={this.state.statistics}
                             stateStatistics={this.state.stateStatistics}
+                            currentSort={this.state.currentSort}
+                            filterStateData={this.filterStateData}
                         />
                     } />
                     <Route path='/signup' render={({ history }) =>

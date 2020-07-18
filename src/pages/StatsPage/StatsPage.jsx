@@ -22,6 +22,9 @@ class StatsPage extends Component {
                 />
                 <StateStatistics 
                     stateStatistics={this.props.stateStatistics}
+                    currentSort={this.props.currentSort}
+                    filterStateData={this.props.filterStateData}
+                    handleMapClick={this.props.handleMapClick}
                 />
             </>
         );
