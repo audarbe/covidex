@@ -6,22 +6,19 @@ const NavBar = (props) => {
     let userControlPanel = props.user ?
             <ul>
                 <li>
-                    <Link to=''><i>Welcome, {props.user.name}</i></Link>
+                    <Link to='/facilities'>My Facilities</Link>
                 </li>
                 <li>
-                    <Link to='/facilities'>MY FACILITIES</Link>
-                </li>
-                <li>
-                    <Link to='' onClick={props.handleLogout}>LOG OUT</Link>
+                    <Link to='' onClick={props.handleLogout}>Log Out</Link>
                 </li>
             </ul>
         :
         <ul>
             <li>
-                <Link to='/login'>LOG IN</Link>
+                <Link to='/login'>Log In</Link>
             </li>
             <li>
-                <Link to='' onClick={props.handleLogout}>LOG OUT</Link>
+                <Link to='/signup' onClick={props.handleLogout}>Sign Up</Link>
             </li>
         </ul>
         ;

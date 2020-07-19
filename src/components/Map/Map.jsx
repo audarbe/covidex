@@ -19,36 +19,36 @@ class Map extends Component {
         if (this.props.currentMapFilter === 'positive') {
             switch (true) {
                 case val > 400000:
-                    return '#C0392B';
+                    return '#B14433';
                 case val > 300000:
-                    return '#E74C3C';
+                    return '#993E30';
                 case val > 200000:
-                    return '#DC7633';
+                    return '#81382D';
                 case val > 100000:
-                    return '#E67E22';
+                    return '#69322A';
                 case val > 50000:
-                    return '#F5B041';
+                    return '#502C26';
                 case val > 10000:
-                    return '#F7DC6F';
+                    return '#382623';
                 default:
-                    return '#D0D3D4';
+                    return '#202020';
             }
         } else {
             switch (true) {
                 case val > 10000:
-                    return '#C0392B';
+                    return '#B14433';
                 case val > 7500:
-                    return '#E74C3C';
+                    return '#993E30';
                 case val > 5000:
-                    return '#DC7633';
+                    return '#81382D';
                 case val > 2500:
-                    return '#E67E22';
+                    return '#69322A';
                 case val > 1000:
-                    return '#F5B041';
+                    return '#502C26';
                 case val > 500:
-                    return '#F7DC6F';
+                    return '#382623';
                 default:
-                    return '#D0D3D4';
+                    return '#202020';
             }
         }
     }
@@ -58,6 +58,8 @@ class Map extends Component {
             <div className="USAmap">
                 <USAMap
                     className="uk-align-center"
+                    title=""
+                    defaultFill="#202020"
                     customize={this.statesCustomConfig()}
                     onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
                 />

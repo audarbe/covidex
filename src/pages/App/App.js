@@ -114,7 +114,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <header>
                     <WebsiteHeader
                         user={this.state.user}
@@ -122,7 +122,7 @@ class App extends Component {
                         handleMapClick={this.handleMapClick}
                     />
                 </header>
-                <main className="container">
+                <main>
                     <Route exact path='/' render={({ history }) =>
                         <StatsPage
                             history={history}

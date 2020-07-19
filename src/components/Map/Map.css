@@ -1,15 +1,21 @@
 path {
     pointer-events: all;
+    stroke: black;
+    stroke-width: 1;
   }
 
 path:hover {
-    opacity: 0.50;
+    opacity: 0.70;
     cursor: pointer;
+}
+
+.DC2 {
+    stroke: black;
 }
 
 .USAmap {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    padding: 50px 0;
 }

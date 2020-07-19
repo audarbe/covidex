@@ -5,14 +5,34 @@
     font-family: 'Rubik', sans-serif; 
 }
 
+header, footer {
+    background-color: rgba(46,46,46,.4);
+}
+
 body {
-    background-color: #FFFCF0;
+    background-image: url('./images/bg.jpg');
+    color: white;
 }
 
 main {
-    background-color: white;
-    border-radius: 25px;
+    background-color: rgba(10,10,10,.8);
     min-height: 100vh;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    box-shadow: 0 0 40px black
 }
 
 ::-webkit-scrollbar {
