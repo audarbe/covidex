@@ -135,6 +135,9 @@ class App extends Component {
                             filterStateData={this.filterStateData}
                             currentMapFilter={this.state.currentMapFilter}
                             handleMapFilter={this.handleMapFilter}
+                            user={this.state.user}
+                            handleDeleteFacility={this.handleDeleteFacility}
+                            handleEditFacility={this.handleEditFacility}
                         />
                     } />
                     <Route path='/signup' render={({ history }) =>

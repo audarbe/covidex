@@ -59,7 +59,7 @@ class Map extends Component {
                     <USAMap
                         className="uk-align-center"
                         title=""
-                        defaultFill="#202020"
+                        defaultFill="#111111"
                         customize={this.statesCustomConfig()}
                         onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
                     />
@@ -67,7 +67,7 @@ class Map extends Component {
                         <div 
                             className="us-stats-button"
                             onClick={() => this.props.handleMapClick('US')}>
-                                <p><i class="fas fa-chevron-circle-left back-icon"></i> <span>View US heatmap</span></p>
+                                <p><i className="fas fa-chevron-circle-left back-icon"></i> <span>View US heatmap</span></p>
                         </div>
                     :
                     ''

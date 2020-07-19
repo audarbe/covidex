@@ -33,6 +33,9 @@ class StatsPage extends Component {
                         <FacilityListVisitors 
                             facilities={this.props.facilities}
                             currentChoice={this.props.currentChoice}
+                            user={this.props.user}
+                            handleDeleteFacility={this.props.handleDeleteFacility}
+                            handleEditFacility={this.props.handleEditFacility}
                         />
                     </div>
                     <div className="flex-gap"></div>

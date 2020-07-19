@@ -1,0 +1,14 @@
+.card {
+    background-color: #111111;
+    margin: 15px 0;
+    padding: 25px;
+    width: 100%;
+}
+
+.userCard {
+    border-top: 3px solid #3498DB;
+}
+
+.visitorCard {
+    border-top: 3px solid transparent;
+}

@@ -8,7 +8,7 @@ class WebsiteHeader extends Component {
                 <div className="nav-container">
                     <div className="nav-container-item-left">
                         <div onClick={() => this.props.handleMapClick('US')} className="logo">COVIDEX</div>
-                        <i>{this.props.user ? `Welcome, ${this.props.user.name}` : ''}</i>
+                        <i>{this.props.user ? `Welcome, ${this.props.user.name}` : 'Sign up to list your COVID-19 testing facility'}</i>
                     </div>
                     <div className="nav-container-item-right">
                         <NavBar
