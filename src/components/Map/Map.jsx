@@ -57,6 +57,7 @@ class Map extends Component {
         return (
             <div className="USAmap">
                 <USAMap
+                    className="uk-align-center"
                     customize={this.statesCustomConfig()}
                     onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
                 />

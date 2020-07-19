@@ -5,6 +5,7 @@ import SignupPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import userService from '../../utils/userService';
 import WebsiteHeader from '../../components/WebsiteHeader/WebsiteHeader';
+import WebsiteFooter from '../../components/WebsiteFooter/WebsiteFooter';
 import * as facilityAPI from '../../services/facilities-api';
 import * as statisticsAPI from '../../services/stats-api'
 import FacilityListPage from '../FacilitiesListPage/FacilitiesListPage';
@@ -113,7 +114,7 @@ class App extends Component {
 
     render() {
         return (
-            <>
+            <div>
                 <header>
                     <WebsiteHeader
                         user={this.state.user}
@@ -121,7 +122,7 @@ class App extends Component {
                         handleMapClick={this.handleMapClick}
                     />
                 </header>
-                <main>
+                <main className="container">
                     <Route exact path='/' render={({ history }) =>
                         <StatsPage
                             history={history}
@@ -170,7 +171,12 @@ class App extends Component {
                         />
                     } />
                 </main>
-            </>
+                <footer>
+                <WebsiteFooter 
+                    className="websiteFooter"
+                />
+                </footer>
+            </div>
         )
     }
 }

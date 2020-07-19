@@ -1,6 +1,14 @@
 .stats-main-container {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     border: 1px solid red;
+}
+
+.stats-main-card {
+    border: 1px solid blue;
+    flex: 1;
+    text-align: center;
+}
+
+.stats-main-card-focused {
+    background-color: yellow;
 }

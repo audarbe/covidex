@@ -1,0 +1,9 @@
+.logo {
+    font-weight: 700;
+    letter-spacing: -.5px;
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: red;
+}

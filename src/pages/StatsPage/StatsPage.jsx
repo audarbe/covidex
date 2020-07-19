@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './StatsPage.css'
 import Map from "../../components/Map/Map";
 import FacilityListVisitors from '../../components/FacilityList/FacilityListVisitors'
 import StateStatistics from '../../components/StateStatistics/StateStatistics';
@@ -9,7 +10,7 @@ class StatsPage extends Component {
     render() {
         return (
             <>
-                <Map 
+                <Map
                     handleMapClick={this.props.handleMapClick}
                     stateStatistics={this.props.stateStatistics}
                     currentMapFilter={this.props.currentMapFilter}

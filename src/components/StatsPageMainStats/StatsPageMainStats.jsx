@@ -8,25 +8,31 @@ class StatsPageMainStats extends Component {
         return (
             <>
                 <h1>{getStateName(this.props.currentChoice).toUpperCase()} STATISTICS</h1>
-                <div className='stats-main-container'>
-                    <div onClick={() => this.props.handleMapFilter('positiveIncrease')}>
-                        <p>New Cases</p>
+                <div className="stats-main-container">
+                    <div 
+                        className="stats-main-card"
+                        onClick={() => this.props.handleMapFilter('positiveIncrease')}>
+                        <h5>New Cases</h5>
                         <NumberFormat
                             value={this.props.statistics.positiveIncrease}
                             thousandSeparator={true}
                             displayType={'text'}
                         />
                     </div>
-                    <div onClick={() => this.props.handleMapFilter('positive')}>
-                        <p>Total Positive</p>
+                    <div 
+                        className="stats-main-card"
+                        onClick={() => this.props.handleMapFilter('positive')}>
+                        <h5>Total Positive</h5>
                         <NumberFormat
                             value={this.props.statistics.positive}
                             thousandSeparator={true}
                             displayType={'text'}
                         />
                     </div>
-                    <div onClick={() => this.props.handleMapFilter('death')}>
-                        <p>Total Deaths</p>
+                    <div 
+                        className="stats-main-card"
+                        onClick={() => this.props.handleMapFilter('death')}>
+                        <h5>Total Deaths</h5>
                         <NumberFormat
                             value={this.props.statistics.death}
                             thousandSeparator={true}
