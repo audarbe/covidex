@@ -28,19 +28,21 @@ class StatsPage extends Component {
                     currentChoice={this.props.currentChoice}
                     handleMapClick={this.props.handleMapClick}
                 />
-                <div className="row">
-                    <div className="left-8">
+                <div className="secondary-stats-row">
+                    <div className="secondary-stats-left">
                         <FacilityListVisitors 
                             facilities={this.props.facilities}
                             currentChoice={this.props.currentChoice}
                         />
                     </div>
-                    <div className="right-4">
+                    <div className="flex-gap"></div>
+                    <div className="secondary-stats-right">
                         <StateStatistics 
                             stateStatistics={this.props.stateStatistics}
                             currentSort={this.props.currentSort}
                             filterStateData={this.props.filterStateData}
                             handleMapClick={this.props.handleMapClick}
+                            currentChoice={this.props.currentChoice}
                         />
                     </div>
                 </div>

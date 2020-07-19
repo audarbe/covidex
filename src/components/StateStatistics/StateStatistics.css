@@ -1,0 +1,47 @@
+.ranking-container {
+    margin-top: 15px;
+    /* border: 1px solid red; */
+}
+
+.rankings-filter-select {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    padding: 0 15px;
+    background-position: 0 -5px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: .7em;
+    font-weight: 300;
+    text-transform: uppercase;
+    outline: none;
+    height: 50px;
+
+}
+
+table {
+    width: 100%;
+    border-spacing: 0px 1px;
+    /* border: 1px solid red; */
+}
+
+.stats-table-row {
+    height: 43px;
+    background-color: #111111;
+    transition: background-color 0.5s ease;
+}
+
+.stats-table-row:hover {
+    background-color: #191919;
+    cursor: pointer;
+}
+
+.stats-table-rank {
+    padding-left: 20px;
+    width: 75px;
+}
+
+.stats-table-stat {
+    text-align: right;
+    padding-right: 20px;
+}

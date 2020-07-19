@@ -1,5 +1,6 @@
 import React from 'react';
 import './FacilityList.css';
+import { getStateName } from '../../utils/utilities';
 
 function FacilityListVisitors(props) {
     let filteredStates = props.currentChoice === 'US' ?
@@ -43,6 +44,7 @@ function FacilityListVisitors(props) {
 
     return (
         <>
+            <h2>{getStateName(props.currentChoice).toUpperCase()} TESTING FACILITIES</h2>
             {props.facilities.length > 0 ?
             <div>
                 {filteredStates}
