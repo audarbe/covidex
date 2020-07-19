@@ -35,6 +35,12 @@ a {
     box-shadow: 0 0 40px black
 }
 
+.label {
+    font-size: .65em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

@@ -4,12 +4,16 @@ import Map from "../../components/Map/Map";
 import FacilityListVisitors from '../../components/FacilityList/FacilityListVisitors'
 import StateStatistics from '../../components/StateStatistics/StateStatistics';
 import StatsPageMainStats from '../../components/StatsPageMainStats/StatsPageMainStats';
-
+import StatsPageHeader from '../../components/StatsPageHeader/StatsPageHeader';
 
 class StatsPage extends Component {
     render() {
         return (
             <>
+                <StatsPageHeader
+                    currentChoice={this.props.currentChoice}
+                    className="stats-header"
+                />
                 <Map
                     handleMapClick={this.props.handleMapClick}
                     stateStatistics={this.props.stateStatistics}

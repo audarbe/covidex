@@ -31,7 +31,7 @@ class Map extends Component {
                 case val > 10000:
                     return '#382623';
                 default:
-                    return '#202020';
+                    return '#111111';
             }
         } else {
             switch (true) {
@@ -48,7 +48,7 @@ class Map extends Component {
                 case val > 500:
                     return '#382623';
                 default:
-                    return '#202020';
+                    return '#111111';
             }
         }
     }
