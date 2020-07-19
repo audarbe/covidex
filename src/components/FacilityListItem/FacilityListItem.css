@@ -1,14 +1,43 @@
 .card {
     background-color: #111111;
     margin: 15px 0;
-    padding: 25px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.userCard {
+.card-content {
+    padding: 25px;
+}
+
+.card-link {
+    font-size: 1em;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.card-link:hover {
+    filter: opacity(25%);
+}
+
+.userCard-controls-container {
     border-top: 3px solid #3498DB;
+    height: 40px;
 }
 
-.visitorCard {
-    border-top: 3px solid transparent;
+.userCard-controls {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 0 25px;
+    align-items: flex-end;
+}
+
+.userCard-controls-left {
+    flex: 1;
+}
+
+.userCard-controls-right {
+    flex: 1;
+    text-align: right;
 }

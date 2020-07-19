@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -41,6 +45,13 @@ a {
     text-transform: uppercase;
 }
 
-::-webkit-scrollbar {
-    display: none;
+.notice-blue {
+    font-size: .8em;
+    font-weight: 300;
+    font-style: italic;
+    color: #3498DB;
+}
+
+.link-icon {
+    color: #3498DB;
 }

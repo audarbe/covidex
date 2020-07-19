@@ -67,7 +67,7 @@ class Map extends Component {
                         <div 
                             className="us-stats-button"
                             onClick={() => this.props.handleMapClick('US')}>
-                                <p><i className="fas fa-chevron-circle-left back-icon"></i> <span>View US heatmap</span></p>
+                                <p><i className="fas fa-chevron-circle-left link-icon"></i> <span>View US heatmap</span></p>
                         </div>
                     :
                     ''
