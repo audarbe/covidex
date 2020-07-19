@@ -11,7 +11,7 @@ class StatsPageMainStats extends Component {
                         style={{borderTop: this.props.currentChoice === 'US' && this.props.currentMapFilter === 'positiveIncrease' ? '3px solid #3498DB' : '3px solid #333333'}}
                         className="stats-main-card"
                         onClick={() => this.props.handleMapFilter('positiveIncrease')}>
-                        <p className="label">New Cases</p>
+                        <p className="label">New Daily Cases</p>
                         <p className ="main-stats-stat">
                             <NumberFormat
                                 value={this.props.statistics.positiveIncrease}
@@ -47,7 +47,6 @@ class StatsPageMainStats extends Component {
                         </p>
                     </div>
                 </div>
-                <button onClick={() => this.props.handleMapClick('US')}>View US Stats</button>
             </>
         );
     }
