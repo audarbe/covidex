@@ -1,13 +1,13 @@
 import React from 'react';
 import './WebsiteFooter.css'
 
-function WebsiteFooter() {
+function WebsiteFooter(props) {
     return (
 
         <div className="footer-container">
             <div className="footer-container-left">
                 <div>
-                <div onClick={() => this.props.handleMapClick('US')} className="logo">COVIDEX</div>
+                <div onClick={() => props.handleMapClick('US')} className="logo">COVIDEX</div>
                 </div>
                 <div>
                     <p>GA • SEI • Project 4</p>

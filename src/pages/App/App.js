@@ -177,6 +177,7 @@ class App extends Component {
                 <footer>
                 <WebsiteFooter 
                     className="websiteFooter"
+                    handleMapClick={this.handleMapClick}
                 />
                 </footer>
             </div>

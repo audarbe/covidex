@@ -17,7 +17,6 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    console.log(req.user)
     try {
         const facilities = await Facility.find({});
         res.status(200).json(facilities);
