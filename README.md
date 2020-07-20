@@ -12,6 +12,7 @@ COVIDEX is a COVID-19 tracking app where visitors can view current US COVID-19 d
 - Express
 - React
 - Node.js
+- Vanilla CSS
 - The COVID Tracking Project API
 
 **Next Steps**
