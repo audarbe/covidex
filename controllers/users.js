@@ -41,7 +41,7 @@ async function signup(req, res) {
 function createJWT(user) {
     return jwt.sign(
       {user}, // data payload
-      process.env.SECRET,
+      SECRET,
       {expiresIn: '24h'}
     );
   }
