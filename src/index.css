@@ -39,6 +39,12 @@ a {
     box-shadow: 0 0 40px black
 }
 
+.container-single-page {
+    width: 75%;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
 .label {
     font-size: .65em;
     font-weight: 300;

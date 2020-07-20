@@ -7,7 +7,7 @@ class FacilityListItem extends Component {
         let facility = this.props.facility;
         let card =
             <div className="card">
-                {this.props.user._id && facility.userId === this.props.user._id ?
+                {this.props.user && facility.userId === this.props.user._id ?
                     <div className="userCard-controls-container">
                         <div className="userCard-controls">
                             <div className="userCard-controls-left">
@@ -35,16 +35,21 @@ class FacilityListItem extends Component {
                 ''
                 }
                 <div className="card-content">
-                    <h3>{facility.name}</h3>
-                    <p>{facility.description}</p>
-                    <p>
-                        <b>Address:</b><br />
-                        {facility.streetAddress}<br />
-                        {facility.suiteNum}<br />
-                        {facility.city}, {facility.state} {facility.zipCode}
-                    </p>
+                    <div className="card-content-left">
+                        <h3>{facility.name}</h3>
+                        <p className="facility-description">{facility.description}</p>
+                    </div>
+                    <div className="card-content-right">
+                            <span className="label">Address:</span><br />
+                        <p className="facility-address">
+                            {facility.streetAddress}<br />
+                            {facility.suiteNum}<br />
+                            {facility.city}, {facility.state} {facility.zipCode}
+                        </p>
+                    </div>
                 </div>
             </div>
+
         return (
             card
         )

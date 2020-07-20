@@ -41,3 +41,22 @@
     flex: 1;
     text-align: right;
 }
+
+.card-content {
+    display: flex;
+}
+
+.card-content-left {
+    flex: 2;
+    padding-right: 10px;
+}
+
+.card-content-right {
+    flex: .7;
+    padding-left: 10px;
+}
+
+.facility-description, .facility-address {
+    font-size: .8em;
+    margin-top: 5px;
+}

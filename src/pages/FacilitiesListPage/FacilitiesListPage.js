@@ -1,20 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import FacilityListUsers from '../../components/FacilityList/FacilityListUsers'
+import FacilityListItem from '../../components/FacilityListItem/FacilityListItem'
 
 function FacilityListPage(props) {
     return (
-        <>
-            <h1>MY FACILITIES</h1>
-            <FacilityListUsers
-                user={props.user}
-                facilities={props.facilities}
-                handleDeleteFacility={props.handleDeleteFacility}
-            />
-            <div>
-                <Link to='/facilities/add'>Add new facility</Link>
-            </div>
-        </>
+        <div className="container-single-page">
+            <h3>MY FACILITIES</h3>
+            {props.facilities.length > 0 ?
+                <div className="single-page-container">
+                    {props.facilities
+                        .filter(facility => facility.userId === props.user._id)
+                        .map(facility => {
+                            return (
+                                <FacilityListItem
+                                    facility={facility}
+                                    user={props.user}
+                                    key={facility._id}
+                                    handleDeleteFacility={props.handleDeleteFacility}
+                                    handleEditFacility={props.handleEditFacility}
+                                />
+                            )
+                        }
+                        )}
+                </div>
+                :
+                <p>Fetching data...</p>
+            }
+        </div>
     );
 }
 
