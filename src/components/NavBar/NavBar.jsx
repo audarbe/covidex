@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
     let userControlPanel = props.user ?
-            <ul>
-                <li>
-                    <Link to='/facilities'>My Facilities</Link>
-                </li>
-                <li>
-                    <Link to='' onClick={props.handleLogout}>Log Out</Link>
-                </li>
-            </ul>
+        <ul>
+            <li>
+                <Link to='/facilities'>My Facilities</Link>
+            </li>
+            <li>
+                <Link to='' onClick={props.handleLogout}>Log Out</Link>
+            </li>
+        </ul>
         :
         <ul>
             <li>

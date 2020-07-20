@@ -15,14 +15,14 @@ export function create(facility) {
 
 export function deleteOne(id) {
     return fetch(`${BASE_URL}/${id}`, {
-      method: 'DELETE'
+        method: 'DELETE'
     }).then(res => res.json());
-  }
+}
 
 export function update(facility) {
     return fetch(`${BASE_URL}/${facility._id}`, {
         method: 'PUT',
-        headers: {'content-type': 'application/json'},
+        headers: { 'content-type': 'application/json' },
         body: JSON.stringify(facility)
     }).then(res => res.json());
 }

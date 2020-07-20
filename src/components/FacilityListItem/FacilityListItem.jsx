@@ -31,8 +31,8 @@ class FacilityListItem extends Component {
                             </div>
                         </div>
                     </div>
-                :
-                ''
+                    :
+                    ''
                 }
                 <div className="card-content">
                     <div className="card-content-left">
@@ -40,7 +40,7 @@ class FacilityListItem extends Component {
                         <p className="facility-description">{facility.description}</p>
                     </div>
                     <div className="card-content-right">
-                            <span className="label">Address:</span><br />
+                        <span className="label">Address:</span><br />
                         <p className="facility-address">
                             {facility.streetAddress}<br />
                             {facility.suiteNum}<br />

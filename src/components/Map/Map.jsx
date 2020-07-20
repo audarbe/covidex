@@ -55,24 +55,24 @@ class Map extends Component {
 
     render() {
         return (
-                <div className="USAmap">
-                    <USAMap
-                        className="uk-align-center"
-                        title=""
-                        defaultFill="#111111"
-                        customize={this.statesCustomConfig()}
-                        onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
-                    />
-                    { this.props.currentChoice !== 'US' ?
-                        <div 
-                            className="us-stats-button"
-                            onClick={() => this.props.handleMapClick('US')}>
-                                <p><i className="fas fa-chevron-circle-left link-icon"></i> <span>View US heatmap</span></p>
-                        </div>
+            <div className="USAmap">
+                <USAMap
+                    className="uk-align-center"
+                    title=""
+                    defaultFill="#111111"
+                    customize={this.statesCustomConfig()}
+                    onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
+                />
+                {this.props.currentChoice !== 'US' ?
+                    <div
+                        className="us-stats-button"
+                        onClick={() => this.props.handleMapClick('US')}>
+                        <p><i className="fas fa-chevron-circle-left link-icon"></i> <span>View US heatmap</span></p>
+                    </div>
                     :
                     ''
-                    }
-                </div>
+                }
+            </div>
         );
     }
 }

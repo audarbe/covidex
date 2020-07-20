@@ -175,10 +175,10 @@ class App extends Component {
                     } />
                 </main>
                 <footer>
-                <WebsiteFooter 
-                    className="websiteFooter"
-                    handleMapClick={this.handleMapClick}
-                />
+                    <WebsiteFooter
+                        className="websiteFooter"
+                        handleMapClick={this.handleMapClick}
+                    />
                 </footer>
             </div>
         )

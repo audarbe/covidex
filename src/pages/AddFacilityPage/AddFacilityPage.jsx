@@ -36,7 +36,7 @@ class AddFacilityPage extends Component {
             <div className="container-single-page">
                 <h3>ADD FACILITY</h3>
                 <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-                <div className="form-group">
+                    <div className="form-group">
                         <label>Facility Name</label>
                         <input
                             name="name"
@@ -81,7 +81,7 @@ class AddFacilityPage extends Component {
                             value={this.state.formData.state}
                             onChange={this.handleChange}
                         >
-                            { this.props.statesEnum.map(s => (
+                            {this.props.statesEnum.map(s => (
                                 <option key={s} value={s}>{s}</option>
                             ))
                             }

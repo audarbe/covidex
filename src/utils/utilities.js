@@ -1,6 +1,6 @@
 export function getStateName(abbr) {
     const stateNames = {
-        'AL': 'Alabama', 
+        'AL': 'Alabama',
         'AK': 'Alaska',
         'AZ': 'Arizona',
         'AR': 'Arkansas',
@@ -64,10 +64,10 @@ export function getStateName(abbr) {
     return stateNames[abbr]
 }
 
-export function getCurrentDate(separator='/'){
+export function getCurrentDate(separator = '/') {
     let newDate = new Date()
     let date = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
-    return `${month<10?`0${month}`:`${month}`}${separator}${date}${separator}${year}`
+    return `${month < 10 ? `0${month}` : `${month}`}${separator}${date}${separator}${year}`
 }

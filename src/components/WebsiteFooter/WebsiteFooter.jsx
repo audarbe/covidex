@@ -7,7 +7,7 @@ function WebsiteFooter(props) {
         <div className="footer-container">
             <div className="footer-container-left">
                 <div>
-                <div onClick={() => props.handleMapClick('US')} className="logo">COVIDEX</div>
+                    <div onClick={() => props.handleMapClick('US')} className="logo">COVIDEX</div>
                 </div>
                 <div>
                     <p>GA • SEI • Project 4</p>

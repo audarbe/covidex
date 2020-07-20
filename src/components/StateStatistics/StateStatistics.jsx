@@ -9,19 +9,19 @@ function StateStatistics(props) {
         props.stateStatistics
             .slice(0, 25)
             .map((s, idx) =>
-                <tr className="stats-table-row" 
+                <tr className="stats-table-row"
                     key={s.state}
-                    style={{backgroundColor: s.state === props.currentChoice ? '#3498DB' : ''}}
+                    style={{ backgroundColor: s.state === props.currentChoice ? '#3498DB' : '' }}
                     onClick={() => props.handleMapClick(s.state)}>
-                        <td className="stats-table-rank">#{idx + 1}</td>
-                        <td className="stats-table-state">{getStateName(s.state)}</td>
-                        <td className="stats-table-stat">
-                            <NumberFormat 
-                                value={s[props.currentSort]}
-                                thousandSeparator={true} 
-                                displayType={'text'}
-                            />
-                        </td>
+                    <td className="stats-table-rank">#{idx + 1}</td>
+                    <td className="stats-table-state">{getStateName(s.state)}</td>
+                    <td className="stats-table-stat">
+                        <NumberFormat
+                            value={s[props.currentSort]}
+                            thousandSeparator={true}
+                            displayType={'text'}
+                        />
+                    </td>
                 </tr>
             )
     return (
@@ -30,7 +30,7 @@ function StateStatistics(props) {
             <div className="ranking-container">
                 <form>
                     <select
-                        className="rankings-filter-select" 
+                        className="rankings-filter-select"
                         onChange={(e) => props.filterStateData(e.target.value)}>
                         <option value="positiveIncrease" defaultValue>New daily cases</option>
                         <option value="deathConfirmed">Total deaths</option>

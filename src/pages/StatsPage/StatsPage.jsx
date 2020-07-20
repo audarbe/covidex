@@ -21,7 +21,7 @@ class StatsPage extends Component {
                     handleMapFilter={this.props.handleMapFilter}
                     currentChoice={this.props.currentChoice}
                 />
-                <StatsPageMainStats 
+                <StatsPageMainStats
                     statistics={this.props.statistics}
                     currentMapFilter={this.props.currentMapFilter}
                     handleMapFilter={this.props.handleMapFilter}
@@ -30,7 +30,7 @@ class StatsPage extends Component {
                 />
                 <div className="secondary-stats-row">
                     <div className="secondary-stats-left">
-                        <FacilityListVisitors 
+                        <FacilityListVisitors
                             facilities={this.props.facilities}
                             currentChoice={this.props.currentChoice}
                             user={this.props.user}
@@ -40,7 +40,7 @@ class StatsPage extends Component {
                     </div>
                     <div className="flex-gap"></div>
                     <div className="secondary-stats-right">
-                        <StateStatistics 
+                        <StateStatistics
                             stateStatistics={this.props.stateStatistics}
                             currentSort={this.props.currentSort}
                             filterStateData={this.props.filterStateData}
