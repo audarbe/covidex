@@ -4,13 +4,14 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors');
 
+const app = express();
+
+
 require('dotenv').config()
 require('./config/database')
 
 const usersRouter = require('./routes/api/users');
 const facilitiesRouter = require('./routes/api/facilities');
-
-const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
