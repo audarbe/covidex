@@ -81,24 +81,55 @@ a {
 .form-group {
     display: flex;
     align-items: center;
-    color: #333333;
+    color: #ffffff;
+    margin-top: 40px;
 }
 
-.form-group > input, .form-group > select  {
+.form-group > input, .form-group > select {
     flex: 1;
     background-color: transparent;
     outline: none;
     border-style: none;
-    border-bottom: 1px solid #333333;
-    margin: 40px 25px;
+    border: 1px solid #333333;
     color: white;
+    height: 40px;
+    padding: 0 15px;
+}
+
+.form-group > label {
+    font-size: .8em;
+    margin: 0 20px;
+}
+
+textarea {
+    flex: 1;
+    background-color: transparent;
+    outline: none;
+    border-style: none;
+    border: 1px solid #333333;
+    color: white;
+    height: 100px;
+    padding: 15px;
+    resize: none;
 }
 
 .form-button {
     padding: 10px 20px;
-    margin-right: 15px;
+    margin-left: 15px;
     border-radius: 0;
     border-style: none;
+    outline: none;
+    appearance: none;
+}
+
+.form-button:hover {
+    background-color: #3498DB;
+    color: #ffffff;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .section-header-container {

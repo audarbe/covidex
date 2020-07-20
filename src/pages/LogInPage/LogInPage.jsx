@@ -34,27 +34,27 @@ class LoginPage extends Component {
                     className="user-form"
                     onSubmit={this.handleSubmit}>
                     <div className="form-group">
+                    <label>E-Mail</label>
                         <input
                             type="email"
                             className="form-control"
-                            placeholder="Email"
                             value={this.state.email}
                             name="email"
                             onChange={this.handleChange}
                         />
+                        <label>Password</label>
                         <input
                             type="password"
                             className="form-control"
-                            placeholder="Password"
                             value={this.state.pw}
                             name="pw"
                             onChange={this.handleChange}
                         />
                     </div>
                     <div>
-                        <div>
-                            <button className="form-button">Log In</button>
+                    <div className="form-group submit-container">
                             <Link to='/' className="label">Cancel</Link>
+                            <button className="form-button">Log In</button>
                         </div>
                     </div>
                 </form>

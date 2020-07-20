@@ -47,11 +47,12 @@ class AddFacilityPage extends Component {
                     </div>
                     <div className="form-group">
                         <label>Description</label>
-                        <input
+                        <textarea
                             name="description"
                             value={this.state.formData.description}
                             onChange={this.handleChange}
                         />
+
                     </div>
                     <div className="form-group">
                         <label>Street Address</label>
@@ -95,14 +96,16 @@ class AddFacilityPage extends Component {
                             required
                         />
                     </div>
-                    <button
-                        className="form-button"
-                        type="submit"
-                        disabled={this.state.invalidForm}
-                    >
-                        ADD FACILITY
-                    </button>
-                    <Link to='/' className="label">Cancel</Link>
+                    <div className="form-group submit-container">
+                        <Link to='/' className="label">Cancel</Link>
+                        <button
+                            className="form-button"
+                            type="submit"
+                            disabled={this.state.invalidForm}
+                        >
+                            ADD FACILITY
+                        </button>
+                    </div>
                 </form>
             </div>
         );

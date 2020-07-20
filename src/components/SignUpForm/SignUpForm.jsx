@@ -41,17 +41,41 @@ class SignupForm extends Component {
                     className="user-form"
                 >
                     <div className="form-group">
-                        <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
-                        <input type="email" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+                    <label>Name</label>
+                        <input 
+                            type="text" 
+                            value={this.state.name} 
+                            name="name" 
+                            onChange={this.handleChange} 
+                        />
+                        <label>Email</label>
+                        <input 
+                            type="email" 
+                            value={this.state.email} 
+                            name="email" 
+                            onChange={this.handleChange} 
+                        />
                     </div>
                     <div className="form-group">
-                        <input type="password" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
-                        <input type="password" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+                    <label>Password</label>
+                        <input 
+                            type="password" 
+                            value={this.state.password} 
+                            name="password" 
+                            onChange={this.handleChange} 
+                        />
+                        <label>Confirm Password</label>
+                        <input 
+                            type="password" 
+                            value={this.state.passwordConf} 
+                            name="passwordConf" 
+                            onChange={this.handleChange} 
+                        />
                     </div>
                     <div>
-                        <div>
-                            <button className="form-button" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
+                    <div className="form-group submit-container">
                             <Link to='/' className="label">Cancel</Link>
+                            <button className="form-button" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
                         </div>
                     </div>
                 </form>

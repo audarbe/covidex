@@ -19,6 +19,13 @@ async function create(req, res) {
 async function index(req, res) {
     try {
         const facilities = await Facility.find({});
+        facilities.sort(function(a, b) {
+            if (a.state < b.state)
+                return -1 
+            if (a.state > b.state)
+                return 1
+            return 0
+        })
         res.status(200).json(facilities);
     } catch (err) {
         res.json({ err });
