@@ -36,9 +36,9 @@ async function deleteOne(req, res) {
 
 async function update(req, res) {
     try {
-        const updatedFacility = await Facility.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        const updatedFacility = await Facility.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json(updatedFacility);
-    } catch(err) {
+    } catch (err) {
         res.json({ err });
     }
-  }
+}
