@@ -28,18 +28,20 @@ async function login(req, res) {
 async function signup(req, res) {
     const user = new User(req.body);
     try {
-        await user.save();
-        const token = createJWT(user);
-        res.json({ token });
+      await user.save();
+      // Be sure to first delete data that should not be in the token
+      const token = createJWT(user);
+      res.json({ token });
     } catch (err) {
-        res.status(400).json(err);
+      // Probably a duplicate email
+      res.status(400).json(err);
     }
-}
+  }
 
 function createJWT(user) {
     return jwt.sign(
-        { user },
-        SECRET,
-        { expiresIn: '24h' }
+      {user}, // data payload
+      process.env.SECRET,
+      {expiresIn: '24h'}
     );
-}
+  }

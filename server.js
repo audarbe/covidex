@@ -6,9 +6,9 @@ const cors = require('cors');
 
 const app = express();
 
-
 require('dotenv').config()
 require('./config/database')
+
 
 const usersRouter = require('./routes/api/users');
 const facilitiesRouter = require('./routes/api/facilities');
