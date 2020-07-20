@@ -15,7 +15,6 @@ const facilitySchema = new Schema({
     },
     suiteNum: {
         type: String,
-        required: true,
     },
     city: {
         type: String,
@@ -46,12 +45,5 @@ const facilitySchema = new Schema({
         timestamps: true
     }
 );
-
-// 2-letters/upppercase
-// scoreSchema.pre('save', function(next) {
-//     this.state = this.state.substr(0, 2).toUpperCase();
-//     next();
-//   });
-
 
 module.exports = mongoose.model('Facility', facilitySchema);

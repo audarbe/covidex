@@ -60,6 +60,7 @@ class AddFacilityPage extends Component {
                             name="streetAddress"
                             value={this.state.formData.streetAddress}
                             onChange={this.handleChange}
+                            required
                         />
                         <label>Suite Number</label>
                         <input
@@ -74,6 +75,7 @@ class AddFacilityPage extends Component {
                             name="city"
                             value={this.state.formData.city}
                             onChange={this.handleChange}
+                            required
                         />
                         <label>State</label>
                         <select
@@ -91,6 +93,7 @@ class AddFacilityPage extends Component {
                             name="zipCode"
                             value={this.state.formData.zipCode}
                             onChange={this.handleChange}
+                            required
                         />
                     </div>
                     <button
