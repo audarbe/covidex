@@ -43,7 +43,7 @@ class FacilityListItem extends Component {
                         <span className="label">Address:</span><br />
                         <p className="facility-address">
                             {facility.streetAddress}<br />
-                            {facility.suiteNum}<br />
+                            { facility.suiteNum ? <span>Suite {facility.suiteNum}<br /></span> : ''}
                             {facility.city}, {facility.state} {facility.zipCode}
                         </p>
                     </div>

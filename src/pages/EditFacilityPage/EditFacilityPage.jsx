@@ -42,7 +42,6 @@ class EditFacilityPage extends Component {
                             name="description"
                             value={this.state.formData.description}
                             onChange={this.handleChange}
-                            required
                         />
                     </div>
                     <div className="form-group">
