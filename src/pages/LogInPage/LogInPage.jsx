@@ -28,37 +28,33 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div>
-                <h1>LOG IN</h1>
-                <form onSubmit={this.handleSubmit} >
-                    <div>
-                        <div>
-                            <input
-                                type="email"
-                                className="form-control"
-                                placeholder="Email"
-                                value={this.state.email}
-                                name="email"
-                                onChange={this.handleChange}
-                            />
-                        </div>
+            <div className="container-single-page">
+                <h3>LOG IN</h3>
+                <form
+                    className="user-form"
+                    onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <input
+                            type="email"
+                            className="form-control"
+                            placeholder="Email"
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleChange}
+                        />
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Password"
+                            value={this.state.pw}
+                            name="pw"
+                            onChange={this.handleChange}
+                        />
                     </div>
                     <div>
                         <div>
-                            <input
-                                type="password"
-                                className="form-control"
-                                placeholder="Password"
-                                value={this.state.pw}
-                                name="pw"
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <button>Log In</button> |
-                            <Link to='/'>Cancel</Link>
+                            <button className="form-button">Log In</button>
+                            <Link to='/' className="label">Cancel</Link>
                         </div>
                     </div>
                 </form>

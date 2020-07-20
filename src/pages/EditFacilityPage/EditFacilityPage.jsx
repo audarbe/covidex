@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class EditFacilityPage extends Component {
     state = {
@@ -11,22 +12,22 @@ class EditFacilityPage extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.handleEditFacility(this.state.formData);
-      };
-    
-      handleChange = e => {
-        const formData = {...this.state.formData, [e.target.name]: e.target.value};
+    };
+
+    handleChange = e => {
+        const formData = { ...this.state.formData, [e.target.name]: e.target.value };
         this.setState({
-          formData,
-          invalidForm: !this.formRef.current.checkValidity()
+            formData,
+            invalidForm: !this.formRef.current.checkValidity()
         });
-      };
+    };
 
     render() {
         return (
-            <>
-                <h1>Add Facility</h1>
+            <div className="container-single-page">
+                <h3>EDIT FACILITY</h3>
                 <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="form-group">
                         <label>Facility Name</label>
                         <input
                             name="name"
@@ -35,7 +36,7 @@ class EditFacilityPage extends Component {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Description</label>
                         <input
                             name="description"
@@ -44,15 +45,13 @@ class EditFacilityPage extends Component {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Street Address</label>
                         <input
                             name="streetAddress"
                             value={this.state.formData.streetAddress}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
                         <label>Suite Number</label>
                         <input
                             name="suiteNum"
@@ -60,28 +59,24 @@ class EditFacilityPage extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>City</label>
                         <input
                             name="city"
                             value={this.state.formData.city}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
                         <label>State</label>
                         <select
                             name="state"
                             value={this.state.formData.state}
                             onChange={this.handleChange}
                         >
-                            { this.props.statesEnum.map(s => (
+                            {this.props.statesEnum.map(s => (
                                 <option key={s} value={s}>{s}</option>
                             ))
                             }
                         </select>
-                    </div>
-                    <div>
                         <label>Zip Code</label>
                         <input
                             name="zipCode"
@@ -90,13 +85,15 @@ class EditFacilityPage extends Component {
                         />
                     </div>
                     <button
+                        className="form-button"
                         type="submit"
                         disabled={this.state.invalidForm}
                     >
                         SAVE EDITS
-          </button>
+                    </button>
+                    <Link to='/' className="label">Cancel</Link>
                 </form>
-            </>
+            </div>
         );
     }
 }

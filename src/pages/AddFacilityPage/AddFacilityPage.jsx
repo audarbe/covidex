@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class AddFacilityPage extends Component {
     state = {
@@ -32,11 +33,10 @@ class AddFacilityPage extends Component {
 
     render() {
         return (
-            <>
-                {}
-                <h1>Add Facility</h1>
+            <div className="container-single-page">
+                <h3>ADD FACILITY</h3>
                 <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-                    <div>
+                <div className="form-group">
                         <label>Facility Name</label>
                         <input
                             name="name"
@@ -45,7 +45,7 @@ class AddFacilityPage extends Component {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Description</label>
                         <input
                             name="description"
@@ -54,15 +54,13 @@ class AddFacilityPage extends Component {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>Street Address</label>
                         <input
                             name="streetAddress"
                             value={this.state.formData.streetAddress}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
                         <label>Suite Number</label>
                         <input
                             name="suiteNum"
@@ -70,15 +68,13 @@ class AddFacilityPage extends Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label>City</label>
                         <input
                             name="city"
                             value={this.state.formData.city}
                             onChange={this.handleChange}
                         />
-                    </div>
-                    <div>
                         <label>State</label>
                         <select
                             name="state"
@@ -90,8 +86,6 @@ class AddFacilityPage extends Component {
                             ))
                             }
                         </select>
-                    </div>
-                    <div>
                         <label>Zip Code</label>
                         <input
                             name="zipCode"
@@ -100,13 +94,15 @@ class AddFacilityPage extends Component {
                         />
                     </div>
                     <button
+                        className="form-button"
                         type="submit"
                         disabled={this.state.invalidForm}
                     >
                         ADD FACILITY
-          </button>
+                    </button>
+                    <Link to='/' className="label">Cancel</Link>
                 </form>
-            </>
+            </div>
         );
     }
 }
