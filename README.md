@@ -16,6 +16,7 @@ COVIDEX is a COVID-19 tracking app where visitors can view current US COVID-19 d
 - The COVID Tracking Project API
 
 **Next Steps**
+- [ ] Paginate Results
 - [ ] Responsive
 - [ ] Historical data visualation
 - [ ] Geolocation filtering
