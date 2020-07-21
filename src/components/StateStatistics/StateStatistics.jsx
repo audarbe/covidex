@@ -7,7 +7,7 @@ class StateStatistics extends Component {
     render() {
         let items =
             this.props.stateStatistics
-                .slice(0, 25)
+                .slice(0, 20)
                 .map((s, idx) =>
                     <tr className="stats-table-row"
                         key={s.state}

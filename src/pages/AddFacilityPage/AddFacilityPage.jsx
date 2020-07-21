@@ -10,7 +10,7 @@ class AddFacilityPage extends Component {
             streetAddress: '',
             suiteNum: '',
             city: '',
-            state: '',
+            state: 'AL',
             zipCode: '',
             userId: this.props.user._id,
         }
