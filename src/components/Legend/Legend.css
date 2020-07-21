@@ -1,0 +1,25 @@
+.legend-container {
+    position: absolute;
+    bottom: 90px;
+    right: 80px;
+    width: 160px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.us-stats-button {
+    cursor: pointer;
+}
+
+
+.us-stats-button:hover {
+    filter: opacity(25%);
+}
+
+i.fa-circle {
+    color: #3498DB;
+}

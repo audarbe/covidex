@@ -20,23 +20,3 @@ path:hover {
     transform: translateY(-20px);
     position: relative;
 }
-
-.us-stats-button {
-    position: absolute;
-    bottom: 100px;
-    right: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-}
-
-.us-stats-button > p > span {
-    font-size: 1em;
-    font-weight: 300;
-}
-
-.us-stats-button:hover {
-    filter: opacity(25%);
-}

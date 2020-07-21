@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import USAMap from "react-usa-map";
 import './Map.css'
+import Legend from '../Legend/Legend'
 
 class Map extends Component {
     statesCustomConfig = () => {
@@ -63,15 +64,11 @@ class Map extends Component {
                     customize={this.statesCustomConfig()}
                     onClick={(event) => this.props.handleMapClick(event.target.dataset.name)}
                 />
-                {this.props.currentChoice !== 'US' ?
-                    <div
-                        className="us-stats-button"
-                        onClick={() => this.props.handleMapClick('US')}>
-                        <p><i className="fas fa-chevron-circle-left link-icon"></i> <span>View US heatmap</span></p>
-                    </div>
-                    :
-                    ''
-                }
+                <Legend 
+                    currentMapFilter={this.props.currentMapFilter}
+                    currentChoice={this.props.currentChoice}
+                    handleMapClick={this.props.handleMapClick}
+                />
             </div>
         );
     }
