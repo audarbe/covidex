@@ -129,7 +129,7 @@ textarea {
 
 .submit-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .section-header-container {

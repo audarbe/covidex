@@ -73,6 +73,7 @@ class EditFacilityPage extends Component {
                             value={this.state.formData.state}
                             onChange={this.handleChange}
                         >
+                            <option value="" disabled defaultValue>Choose your state</option>
                             {this.props.statesEnum.map(s => (
                                 <option key={s} value={s}>{s}</option>
                             ))
@@ -87,15 +88,19 @@ class EditFacilityPage extends Component {
                         />
                     </div>
                     <div className="form-group submit-container">
-                        <Link to='/' className="label">Cancel</Link>
-                        <button
-                            className="form-button"
-                            type="submit"
-                            disabled={this.state.invalidForm}
-                        >
-                            SAVE EDITS
-                        </button>
-                        
+                            <div className="submit-container-left">
+                                <small><i>*Required</i></small>
+                            </div>
+                            <div className="submit-container-left">
+                                <Link to='/' className="label">Cancel</Link>
+                                <button
+                                    className="form-button"
+                                    type="submit"
+                                    disabled={this.state.invalidForm}
+                                >
+                                    SAVE EDITS
+                                </button>
+                            </div>
                     </div>
                 </form>
             </div>

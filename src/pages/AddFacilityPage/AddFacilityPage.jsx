@@ -37,7 +37,7 @@ class AddFacilityPage extends Component {
                 <h3>ADD FACILITY</h3>
                 <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label>Facility Name</label>
+                        <label>Facility Name*</label>
                         <input
                             name="name"
                             value={this.state.formData.name}
@@ -55,7 +55,7 @@ class AddFacilityPage extends Component {
 
                     </div>
                     <div className="form-group">
-                        <label>Street Address</label>
+                        <label>Street Address*</label>
                         <input
                             name="streetAddress"
                             value={this.state.formData.streetAddress}
@@ -70,25 +70,27 @@ class AddFacilityPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>City</label>
+                        <label>City*</label>
                         <input
                             name="city"
                             value={this.state.formData.city}
                             onChange={this.handleChange}
                             required
                         />
-                        <label>State</label>
+                        <label>State*</label>
                         <select
                             name="state"
                             value={this.state.formData.state}
                             onChange={this.handleChange}
+                            required
                         >
+                            <option value="" disabled default>Choose your state</option>
                             {this.props.statesEnum.map(s => (
                                 <option key={s} value={s}>{s}</option>
                             ))
                             }
                         </select>
-                        <label>Zip Code</label>
+                        <label>Zip Code*</label>
                         <input
                             name="zipCode"
                             value={this.state.formData.zipCode}
@@ -97,14 +99,19 @@ class AddFacilityPage extends Component {
                         />
                     </div>
                     <div className="form-group submit-container">
-                        <Link to='/' className="label">Cancel</Link>
-                        <button
-                            className="form-button"
-                            type="submit"
-                            disabled={this.state.invalidForm}
-                        >
-                            ADD FACILITY
-                        </button>
+                            <div className="submit-container-left">
+                                <small><i>*Required</i></small>
+                            </div>
+                            <div className="submit-container-left">
+                                <Link to='/' className="label">Cancel</Link>
+                                <button
+                                    className="form-button"
+                                    type="submit"
+                                    disabled={this.state.invalidForm}
+                                >
+                                    ADD FACILITY
+                                </button>
+                            </div>
                     </div>
                 </form>
             </div>
